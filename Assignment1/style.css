@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(155, 150, 145);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+nav {
+  position: sticky;
+  background-color: #7b7070;
+  top: 0;
+  z-index: 2;
+}
+
+nav > .container {
+  border: 1px solid black;
+}
+
+.nav_right {
+  display: flex;
+  gap: 1em;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  background-color: white;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.book > .title {
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.book > .desc {
+  font-size: 1rem;
+  color: #777;
+}
+
+.book > .author {
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.book > .image {
+  margin: 10px;
+}
+
+.book > .description {
+  overflow: hidden;
+  display: none;
+}
+
+.book > .description::-webkit-scrollbar {
+  width: 5px;
+}
+
+.book > .description::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.325);
+}
+
+.book:hover {
+  background-color: rgba(221, 221, 221, 0.571);
+}
+
+.book > i {
+  position: relative;
+  right: 0;
+  margin-top: 10px;
+  margin-left: auto;
+  color: white;
+}
+.book:hover > i {
+  display: block;
+  color: red;
+}
+
+.book:hover > .description,
+.description:hover {
+  display: block;
+
+  font-size: 1.3rem;
+  z-index: 1;
+  font-weight: 700;
+  height: max-content;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: #948f8f;
+  padding: 0.75rem;
+  border: 1px solid black;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  bottom: 0;
+}
